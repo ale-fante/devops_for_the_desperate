@@ -10,6 +10,9 @@ Each one of these directories contain different material for different parts in 
 Here is a quick overview of each directory:
 
 * _ansible_: Contains the playbook and tasks to follow along in the first section of the book.
+ - Vagrant automates the process of creating the VM, while Ansible configures the VM once it's running.
+ - Configuration Management is the process of configuring resources for a specific purpose in a predictable, repeatable manner. 
+ - Infrastructure as code
 
 * _monitoring_: Contains the k8s manifest files to install Prometheus, Alertmanager, and Grafana.
 
