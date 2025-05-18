@@ -8,6 +8,7 @@
   lineinfile:
     path: "/etc/pam.d/common-password"
     regexp: "pam_pwquality.so"
+    # a minimum password length of 12 characters, one lowercase letter, one uppercase, one numeric char, one nonalphanumeric character, three retries and disable root override
     line: "password required pam_pwquality.so minlen=12 lcredit=-1 ucredit=-1 dcredit=-1 ocredit=-1 retry=3 enforce_for_root"
     state: present
 

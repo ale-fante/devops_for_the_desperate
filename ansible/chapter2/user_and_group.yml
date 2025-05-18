@@ -1,13 +1,23 @@
+# Create a Group and a user, assign a user to a group , and create a shared directory and file
+
 - name: Ensure group 'developers' exists
   group:
     name: developers
     state: present
 
+# Don't EVER include passwords in production environment!
+
+# To generate a password:
+# sudo apt update
+# sudo apt install pwgen whois
+# pass='pwgen -- secure -- capitalize --numerals --symbols 12 1'
+# echo $pass | mkpasswd --stdin --method=sha-512; echo $pass
+
 - name: Create the user 'bender'
   user:
     name: bender
     shell: /bin/bash
-    password: $6$OStSJfA6FA$ffSDaJBWfSpmnwlC6QWJwLG3PgZWQhPYUSezmRvSiUFpwSWy/57KuUuLg/4yGBpKx2TWYsPDz9Yq7nL2I2XT3/
+    password: $6$Sleo47CbMIfaa$4tT/RMB8JsckO0GtKEWOu38Xg4zMsAXp3HRS8Vi2v9pVAC25XrV1iDBfREuWd4ctgEXjwMNNsKjap8GguFrZ/1
 
 - name: Assign 'bender' to the 'developers' group
   user:
